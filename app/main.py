@@ -45,7 +45,7 @@ classes = {
     "28": ["del", "del"]
 }
 
-model = load_model("model")
+model = load_model("my_model")
 
 def decode_predictions(preds, top=28):
     if len(preds.shape) != 2 or preds.shape[1] < 27: # your classes number
