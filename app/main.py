@@ -18,10 +18,9 @@ classes = {
     "1": ["B", "b"],
     "2": ["C", "c"],
     "3": ["D", "d"],
-    "4": ["DEL", "del"],
-    "5": ["E", "e"],
-    "6": ["F", "f"],
-    "7": ["G", "g"],
+    "4": ["E", "e"],
+    "5": ["F", "f"],
+    "6": ["G", "g"],
     "7": ["H", "h"],
     "8": ["I", "i"],
     "9": ["J", "j"],
@@ -29,28 +28,27 @@ classes = {
     "11": ["L", "l"],
     "12": ["M", "m"],
     "13": ["N", "n"],
-    "14": ["Nothing", "nothing"],
-    "15": ["O", "o"],
-    "16": ["P", "p"],
-    "17": ["Q", "q"],
-    "18": ["R", "r"],
-    "19": ["S", "s"],
-    "20": ["Space", "space"],
-    "21": ["T", "t"],
-    "22": ["U", "u"],
-    "23": ["V", "v"],
-    "24": ["W", "w"],
-    "25": ["X", "x"],
-    "26": ["Y", "y"],
-    "27": ["Z", "z"],
-    "28": ["_", " "],
-    "29": [".", ","],
+    "14": ["O", "o"],
+    "15": ["P", "p"],
+    "16": ["Q", "q"],
+    "17": ["R", "r"],
+    "18": ["S", "s"],
+    "19": ["T", "t"],
+    "20": ["U", "u"],
+    "21": ["V", "v"],
+    "22": ["W", "w"],
+    "23": ["X", "x"],
+    "24": ["Y", "y"],
+    "25": ["Z", "z"],
+    "26": ["nothing", "nothing"],
+    "27": ["space", "space"],
+    "28": ["del", "del"]
 }
 
-model = load_model("my_model")
+model = load_model("model")
 
 def decode_predictions(preds, top=28):
-    if len(preds.shape) != 2 or preds.shape[1] != 30: # your classes number
+    if len(preds.shape) != 2 or preds.shape[1] < 27: # your classes number
         raise ValueError('`decode_predictions` expects '
                         'a batch of predictions '
                         '(i.e. a 2D array of shape (samples, 1000)). '
