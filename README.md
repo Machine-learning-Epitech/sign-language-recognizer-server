@@ -1,7 +1,7 @@
 # sign-language-recognizer-server
 
 ## Requirements
-- Python3
+- Python 3
 
 ## Installation
 
